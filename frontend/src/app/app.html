@@ -1,0 +1,9 @@
+<app-menu *ngIf="showMenu"></app-menu>
+
+<nav [class.MenuOpenNav]="!showMenu">
+  <i class="fa-solid fa-bars" (click)="Menu()" style="color: white; cursor: pointer;"></i>
+</nav>
+
+<div class="content" [class.MenuOpen]="!showMenu">
+  <router-outlet></router-outlet>
+</div>

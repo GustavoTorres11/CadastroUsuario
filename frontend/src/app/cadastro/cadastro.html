@@ -1,0 +1,19 @@
+<div class="cadastro-container">
+    <div class="cadastro-box">
+        <img src="/logo2.png" alt="logo" width="200" class="logo-image">
+        <form (ngSubmit)="onSubmit()">
+            <div>
+                <input type="text" [(ngModel)]="nome" name="nome" placeholder="nome:" />
+                <input type="email" [(ngModel)]="email" name="email" placeholder="e-mail:" />
+                <input type="password" [(ngModel)]="senha" name="senha" placeholder="senha:" />
+                <input type="text" [(ngModel)]="telefone" name="telefone" placeholder="telefone:" />
+                <input type="text" [(ngModel)]="cpf" name="cpf" placeholder="cpf:" />
+                <input type="text" [(ngModel)]="endereco" name="endereco" placeholder="endereço:" />
+
+            </div>
+            <h3>Já tem uma conta? Faça o <a class="login" routerLink="/login">Login</a></h3>
+
+            <button type="submit">cadastrar</button>
+        </form>
+    </div>
+</div>

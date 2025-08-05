@@ -1,0 +1,25 @@
+<div class="cadastro-container">
+    <div class="cadastro-box">
+        <h2>{{descTitulo}}</h2>
+        <form>
+            <form [formGroup]="usuarioForm" (ngSubmit)="submit()">
+                <div>
+                    <input type="text" name="nome" placeholder="nome:" formControlName="nome" />
+                    <input type="email" name="email" placeholder="e-mail:" formControlName="email" />
+                    @if(mode != 'edit'){
+                    <input type="password" name="senha" placeholder="senha:" formControlName="senha" />
+                    }
+                    <input type="text" name="telefone" placeholder="telefone:" formControlName="telefone" />
+                    <input type="text" name="cpf" placeholder="cpf:" formControlName="cpf" />
+                    <input type="text" name="endereço" placeholder="endereço:" formControlName="endereco" />
+                </div>
+
+
+                <div class="btn-content">
+                    <button class="button" type="submit">{{btnAcao}}</button>
+                    <button class="button" (click)="irParaTelaPrincipal()">Voltar</button>
+                </div>
+
+            </form>
+            <div>
+            </div>

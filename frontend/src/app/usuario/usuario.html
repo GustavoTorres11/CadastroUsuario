@@ -1,0 +1,49 @@
+<div class="cartao-usuario" *ngIf="usuario">
+  <div class="cabecalho">
+    <div class="avatar">
+      {{ getIniciais() }}
+    </div>
+    <div class="informacoes-usuario">
+      <div class="detalhes-usuario">
+        <h3 class="nome-usuario">{{ usuario.nome }}</h3>
+        <span class="status ativo">ativo</span>
+      </div>
+    </div>
+  </div>
+
+  <hr>
+
+  <div class="informacoes">
+    <div class="item-informacao">
+      <div class="rotulo">Email</div>
+      <div class="valor">{{ usuario.email }}</div>
+    </div>
+    <div class="item-informacao">
+      <div class="rotulo">Endereço</div>
+      <div class="valor">{{ usuario.endereco }}</div>
+    </div>
+     <div class="item-informacao">
+      <div class="rotulo">Telefone</div>
+      <div class="valor">{{ usuario.telefone }}</div>
+    </div>
+     <div class="item-informacao">
+      <div class="rotulo">Cpf</div>
+      <div class="valor">{{ usuario.cpf }}</div>
+    </div>
+  </div>
+
+  <div class="estatisticas">
+    <div class="item-estatistica">
+      <span class="numero">127</span>
+      <span class="legenda">Clientes</span>
+    </div>
+    <div class="item-estatistica">
+      <span class="numero">89%</span>
+      <span class="legenda">Taxa de Sucesso</span>
+    </div>
+    <div class="item-estatistica">
+      <span class="numero">2 anos</span>
+      <span class="legenda">Experiência</span>
+    </div>
+  </div>
+</div>

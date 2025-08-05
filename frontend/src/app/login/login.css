@@ -1,0 +1,78 @@
+/* Fundo */
+.login-container {
+    height: 98.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*container do meio */
+.login-box {
+    background-color: white;
+    padding: 80px;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+.login-box h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    color: #1F2937
+}
+
+/* cadastre-se */
+.login-box h3 {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #7e7e7e;
+}
+
+/* Inputs */
+.login-box input {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+}
+
+.logo-image {
+    margin-bottom: 50px;
+    margin-left: -30px;
+}
+
+/* Botão verde */
+.login-box button {
+    width: 60%;
+    height: 40px;
+    border: none;
+    border-radius: 20px;
+    background-color: rgb(53, 53, 53);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+form>div {
+    width: 100%;
+}
+
+.cadastro {
+    text-decoration: underline;
+    color: #7e7e7e;
+}
+
+.cadastro :hover {
+    cursor: pointer;
+}

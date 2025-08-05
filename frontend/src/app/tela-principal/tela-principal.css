@@ -1,0 +1,150 @@
+.admin-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1500px;
+  margin: 20px auto;
+  margin-top: 50px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+  margin-bottom: 20px;
+}
+
+/* Search Bar */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.search-bar input {
+  width: 100%;
+  max-width: 500px;
+  padding: 10px 40px 10px 40px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 15px;
+  background-color: #fff;
+}
+
+.search-bar input::placeholder {
+  color: #999;
+}
+
+.search-bar::before {
+  content: "\f002";
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 14px;
+  color: #888;
+}
+
+/* Botão Cadastrar */
+.search-bar button.cadastrocliente {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 16px;
+  background-color: #1f2d44;
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.search-bar button.cadastrocliente:hover {
+  background-color: #121724;
+}
+
+/* Tabela */
+.tabela-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #fff;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.tabela-usuarios thead {
+  background-color: #f9f9f9;
+  color: #444;
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+  padding: 14px 18px;
+  text-align: left;
+  font-size: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.tabela-usuarios tbody tr:nth-child(even) {
+  background-color: #fcfcfc;
+}
+
+.tabela-usuarios tbody tr:hover {
+  background-color: #f5f5f5;
+}
+
+.tabela-usuarios td:last-child {
+  text-align: center;
+}
+
+.tabela-usuarios td i {
+  margin: 0 8px;
+  cursor: pointer;
+  color: #777;
+  font-size: 16px;
+  transition: color 0.2s ease-in-out;
+}
+
+.tabela-usuarios td i:hover {
+  color: #000;
+}
+
+
+/* Mensagem Sucesso */
+.mensagem-sucesso {
+  background-color: #d4edda;
+  color: #155724;
+  border: 1px solid #c3e6cb;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  text-align: center;
+  animation: fadeOut 0.5s ease-in-out 2.5s forwards;
+  position: absolute;
+  z-index: 1000;
+  left: 35%;
+  right: 35%;
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+  }
+}

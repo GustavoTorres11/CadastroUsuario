@@ -1,0 +1,203 @@
+.admin-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.admin-box {
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 500px;
+  transition: all 0.6s ease-in-out;
+  /* Transição suave pra todas as propriedades */
+  opacity: 1;
+}
+
+.buscaUsuarioid {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-bottom: 20px;
+  gap: 10px;
+  margin: 20px 0;
+  width: 100%;
+}
+
+.buscaUsuarioid input {
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  padding: 15px;
+  margin-bottom: 25px;
+  border: none;
+  border-radius: 20px;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+}
+
+.admin-box-expanded {
+  text-align: center;
+  background: #fff;
+  padding: 40px;
+  border-radius: 20px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  width: 1010px;
+  animation: scaleUp 0.3s ease-out forwards;
+  /* 'forwards' mantém o estado final */
+}
+
+@keyframes scaleUp {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.admin-box h2 {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 30px;
+  font-family: Roboto, sans-serif;
+  font-weight: 900;
+  color: #1f2937;
+}
+
+#inputs {
+  width: 100%;
+  max-width: 550px;
+  /* Mantém o tamanho máximo ajustado */
+  display: flex;
+  flex-direction: column;
+  /* Garante que os inputs fiquem empilhados verticalmente */
+  align-items: center;
+  /* Centraliza os inputs horizontalmente */
+  justify-content: center;
+  /* Centraliza verticalmente dentro do espaço disponível */
+  margin: 0 auto;
+  /* Centraliza o contêiner #inputs horizontalmente na admin-box */
+}
+
+.admin-box input {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  max-width: 550px;
+}
+
+.botoes {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.botoes button {
+  flex: 1;
+  margin: 5px;
+  padding: 12px;
+  border: none;
+  background-color: #1f2937;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  max-width: 350px;
+}
+
+.tabela-usuarios {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  background-color: #fff;
+  border-radius: 8px;
+  overflow: hidden;
+  opacity: 1;
+  /* Garante que a tabela comece visível */
+  transition: opacity 0.3s ease-in-out;
+  /* Transição suave pra aparecer */
+}
+
+.tabela-usuarios th,
+.tabela-usuarios td {
+  padding: 12px 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-usuarios thead {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+.tabela-usuarios tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+
+.fechar-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.fechar-container button {
+  padding: 12px 25px;
+  width: 35%;
+  background-color: #1f2937;
+  color: white;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.mensagem {
+  text-align: center;
+  padding: 2rem;
+  padding-bottom: 0;
+  font-weight: bold;
+  transition: opacity 0.5s ease-in-out;
+  font-size: large;
+}
+
+/* Sucesso: azul escuro (cor 1f2937) */
+.sucesso {
+  color: #1f2937;
+}
+
+/* Erro: vermelho claro */
+.erro {
+  color: rgb(235, 94, 94);
+}
+
+.resultadoGet {
+  text-align: center;
+  color: #1f2937;
+  padding: 2rem;
+  font-size: x-large;
+  font-weight: bolder;
+}

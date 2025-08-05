@@ -1,0 +1,24 @@
+.mensagem-sucesso {
+    background-color: #d4edda;
+    color: #155724;
+    border: 1px solid #c3e6cb;
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    animation: fadeOut 0.5s ease-in-out forwards;
+}
+
+/* Animação opcional para esconder mais suavemente */
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+
+    80% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}

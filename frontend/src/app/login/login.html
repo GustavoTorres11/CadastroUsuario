@@ -1,0 +1,19 @@
+<div class="login-container">
+    <div class="login-box">
+        <img src="/logo2.png" alt="logo" width="200" class="logo-image">
+
+        <form (ngSubmit)="onSubmit()">
+            <div>
+                <input type="email" [(ngModel)]="email" name="email" placeholder="e-mail:" />
+                <input type="password" [(ngModel)]="senha" name="senha" placeholder="senha:" />
+            </div>
+
+            <h3>
+                Não tem um login?
+                <a class="cadastro" routerLink="/cadastro">Cadastre-se</a>
+            </h3>
+
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</div>

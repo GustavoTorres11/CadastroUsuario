@@ -1,0 +1,84 @@
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background-color: #e5e7eb; /* tom neutro e suave */
+  color: #111;
+}
+
+.dashboard {
+  padding: 40px;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dashboard h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 20px;
+  color: #0f172a;
+  letter-spacing: -0.025em;
+}
+
+.subtitulo {
+  color: #555;
+  margin-bottom: 30px;
+}
+
+.card-main {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+  min-width: 300px;
+}
+
+.card h3 {
+  margin-top: 16px;
+}
+
+.stats {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.stat-1, .stat-2 {
+  flex: 1;
+  border-radius: 8px;
+  padding: 16px;
+  color: white;
+  text-align: center;
+}
+
+.stat-1 {
+  background-color: #1d2844;
+}
+
+.stat-2 {
+  background-color: #586891;
+}
+
+.stat-1 strong,
+.stat-2 strong {
+  font-size: 24px;
+  display: block;
+}
+
+.stat-1 span,
+.stat-2 span {
+  font-size: 13px;
+  opacity: 0.9;
+}
+
+.extra {
+  background-color: #f1f5f9;
+  padding: 10px 12px;
+  border-radius: 9px;
+  font-size: 14px;
+}

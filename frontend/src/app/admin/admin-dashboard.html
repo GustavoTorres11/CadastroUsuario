@@ -1,0 +1,113 @@
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<div class="admin-container">
+    <div id="adminBox" [ngClass]="{
+      'admin-box': !isExpanded,
+      'admin-box-expanded': isExpanded
+    }">
+        <h2>Admin</h2>
+
+        <form>
+            <div id="inputs" *ngIf="!isExpanded">
+                <input type="text" [(ngModel)]="id" name="id" placeholder="ID (Remover ou Editar)" />
+                <input type="text" [(ngModel)]="nome" name="nome" placeholder="Nome:" />
+                <input type="email" [(ngModel)]="email" name="email" placeholder="Email:" />
+                <input type="password" [(ngModel)]="senha" name="senha" placeholder="Senha:" />
+                <input type="text" [(ngModel)]="endereco" name="endereco" placeholder="Endereço:" />
+                <input type="text" [(ngModel)]="cpf" name="cpf" placeholder="CPF:" />
+                <input type="text" [(ngModel)]="telefone" name="telefone" placeholder="Telefone:" />
+            </div>
+            <div class="botoes">
+                <button type="button" (click)="post()">Cadastrar</button>
+                <button type="button" (click)="verificarId()">Buscar usuários</button>
+                <button type="button" (click)="put()">Editar</button>
+                <button type="button" (click)="delete()">Remover</button>
+            </div>
+        </form>
+        <div class="mensagem sucesso" *ngIf="resultadoTrue">
+            {{ resultadoTrue }}
+        </div>
+
+        <div class="mensagem erro" *ngIf="resultado">
+            {{ resultado }}
+        </div>
+
+        <!-- Tabela para usuário individual -->
+        <div *ngIf="usuario && usuario.id && isExpanded">
+            <table id="umUsuario" class="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Cpf</th>
+                        <th>Perfil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>{{ nome }}</td>
+                        <td>{{ email }}</td>
+                        <td>{{ telefone }}</td>
+                        <td>{{ endereco }}</td>
+                        <td>{{ cpf }}</td>
+                        <td>{{ usuario.role }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="fechar-container">
+                <button type="button" (click)="fechar()">fechar</button>
+            </div>
+        </div>
+
+        <!-- Tabela para lista de usuários -->
+        <div *ngIf="usuarios && usuarios.length > 0 && isExpanded">
+            <div class="resultadoGet" *ngIf="resultadoGet">
+                {{ resultadoGet }}
+            </div>
+
+            <div class="buscaUsuarioid">
+                <div class="inputcomIcone">
+                    <input type="text" [(ngModel)]="id" name="idBuscaTabela" placeholder="Buscar usuário por id" />
+
+                    <button type="button" (click)="getUsuarioid()">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+            <table id="conteudo" class="tabela-usuarios">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Endereço</th>
+                        <th>Cpf</th>
+                        <th>Perfil</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let usuario of usuarios">
+                        <td>{{ usuario.nome }}</td>
+                        <td>{{ usuario.email }}</td>
+                        <td>{{ usuario.telefone }}</td>
+                        <td>{{ usuario.endereco }}</td>
+                        <td>{{ usuario.cpf }}</td>
+                        <td>{{ usuario.role }}</td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="fechar-container">
+                <button type="button" (click)="fechar()">fechar</button>
+            </div>
+        </div>
+    </div>
+</div>

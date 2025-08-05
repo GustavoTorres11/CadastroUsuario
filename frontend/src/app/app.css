@@ -1,0 +1,50 @@
+.content {
+  height: 100%;
+  margin-left: 250px;
+  padding: 20px;
+  transition: all 0.3s;
+}
+
+nav {
+  width: 100vw;
+  height: 40px;
+  background: #1F2937;
+  background: linear-gradient(96deg,rgba(31, 41, 55, 1) 0%, rgba(17, 24, 39, 1) 35%);
+  position: absolute;
+  top: 0;
+  padding-left: 250px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+}
+
+.MenuOpen {
+  margin-left: 0px;
+}
+
+.MenuOpenNav {
+  padding-left: 20px;
+}
+
+.fa-solid {
+  font-size: 18px;
+  margin-right: 10px;
+  color: #FFF;
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.fa-solid:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar li a:hover {
+  background-color: rgb(83, 83, 83);
+  color: #fff;
+  cursor: pointer;
+}
+
+
+

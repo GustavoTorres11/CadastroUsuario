@@ -1,0 +1,79 @@
+/* Fundo */
+.cadastro-container {
+    height: 98.5vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*container do meio */
+.cadastro-box {
+    background-color: white;
+    padding: 80px;
+    border-radius: 35px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    width: 300px;
+    text-align: center;
+}
+
+/* Título */
+.cadastro-box h2 {
+    margin-bottom: 30px;
+    font-size: 30px;
+    font-family: Roboto, sans-serif;
+    font-weight: 900;
+    color: #1F2937
+}
+
+/* cadastre-se */
+.cadastro-box h3 {
+    font-size: 15px;
+    font-family: sans-serif;
+    color: #7e7e7e;
+}
+
+/* Inputs */
+.cadastro-box input {
+    display: block;
+    width: 100%;
+    max-width: 350px;
+    padding: 15px;
+    margin-bottom: 25px;
+    border: none;
+    border-radius: 20px;
+    background-color: #f1f1f1;
+    box-sizing: border-box;
+}
+
+.button {
+    width: 50%;
+    height: 39px;
+    border: none;
+    border-radius: 8px;
+    background-color: rgb(53, 53, 53);
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+    font-size: 15px;
+}
+
+.btn-content {
+    display: flex;
+    flex-direction: row;
+    margin-top: 50px;
+    gap: 20px;
+}
+
+form>div {
+    width: 100%;
+}
+
+.cadastro {
+    text-decoration: underline;
+    color: #7e7e7e;
+}
+
+.cadastro :hover {
+    cursor: pointer;
+}
