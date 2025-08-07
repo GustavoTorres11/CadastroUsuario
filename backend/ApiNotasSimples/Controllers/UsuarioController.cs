@@ -75,7 +75,7 @@ public class UsuarioController : ControllerBase
     [Authorize]
     public async Task<IActionResult> Atualizar(Guid id, [FromBody] UsuarioModel usuario)
     {
-        usuario.Senha = _cryptoService.HashPassword(usuario.Senha);
+        usuario.Password = _cryptoService.HashPassword(usuario.Password);
         var atualizado = await _repo.Atualizar(id, usuario);
         return Ok(new { mensagem = "Atualizado com sucesso" });
     }

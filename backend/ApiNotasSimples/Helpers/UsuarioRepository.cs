@@ -23,11 +23,11 @@ namespace ApiCadastroClientes.Data.Repositories
             await using var conn = _context.GetConnection();
             await conn.OpenAsync();
 
-            var cmd = new SqlCommand(@"INSERT INTO Usuarios (Nome, Email, Senha, Endereco, Cpf, Telefone, Role, Record_status)
-                                       VALUES (@nome, @email, @senha, @endereco, @cpf, @telefone, @role, @record_status);", conn);
-            cmd.Parameters.AddWithValue("@nome", (object)usuario.Nome ?? DBNull.Value);
+            var cmd = new SqlCommand(@"INSERT INTO Usuarios (Name, Email, Password, Endereco, Cpf, Telefone, Role, Record_status)
+                                       VALUES (@name, @email, @password, @endereco, @cpf, @telefone, @role, @record_status);", conn);
+            cmd.Parameters.AddWithValue("@name", (object)usuario.Name ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@email", (object)usuario.Email ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@senha", (object)usuario.Senha ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@password", (object)usuario.Password ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@endereco", (object)usuario.Endereco ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@cpf", (object)usuario.Cpf ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@telefone", (object)usuario.Telefone ?? DBNull.Value);
@@ -51,7 +51,7 @@ namespace ApiCadastroClientes.Data.Repositories
             try
             {
                 await conn.OpenAsync();
-                var cmd = new SqlCommand("SELECT Id, Nome, Email, Senha, Telefone, Cpf, Endereco, Role FROM Usuarios WHERE Email = @Email and Record_status = 1", conn);
+                var cmd = new SqlCommand("SELECT Id, Name, Email, Password, Telefone, Cpf, Endereco, Role FROM Usuarios WHERE Email = @Email and Record_status = 1", conn);
                 cmd.Parameters.AddWithValue("@Email", email);
 
                 await using var reader = await cmd.ExecuteReaderAsync();
@@ -60,15 +60,15 @@ namespace ApiCadastroClientes.Data.Repositories
                     var usuario = new UsuarioModel
                     {
                         Id = reader.GetGuid(0),
-                        Nome = reader.GetString(1),
+                        Name = reader.GetString(1),
                         Email = reader.GetString(2),
-                        Senha = reader.IsDBNull(3) ? null : reader.GetString(3),
+                        Password = reader.IsDBNull(3) ? null : reader.GetString(3),
                         Telefone = reader.GetString(4),
                         Cpf = reader.GetString(5),
                         Endereco = reader.GetString(6),
                         Role = reader.GetString(7)
                     };
-                    _logger.LogDebug("Usuário retornado: {Email}, Senha: {Senha}", email, usuario.Senha);
+                    _logger.LogDebug("Usuário retornado: {Email}, Senha: {Password}", email, usuario.Password);
                     return usuario;
                 }
                 _logger.LogWarning("Nenhum usuário encontrado para e-mail: {Email}", email);
@@ -96,7 +96,7 @@ namespace ApiCadastroClientes.Data.Repositories
                 return new UsuarioModel
                 {
                     Id = reader.GetGuid(0),
-                    Nome = reader.GetString(1),
+                    Name = reader.GetString(1),
                     Email = reader.GetString(2),
                     Telefone = reader.GetString(4),
                     Cpf = reader.GetString(5),
@@ -120,11 +120,11 @@ namespace ApiCadastroClientes.Data.Repositories
             if (!string.IsNullOrWhiteSpace(termo))
             {
                 query = @"
-                SELECT Id, Nome, Email, Senha, Endereco, Cpf, Telefone, Role, Record_status
+                SELECT Id, Name, Email, Password, Endereco, Cpf, Telefone, Role, Record_status
                 FROM Usuarios
                 WHERE Record_status = 1
                 AND (
-                Nome LIKE @Termo OR
+                Name LIKE @Termo OR
                 Email LIKE @Termo OR
                 CONVERT(VARCHAR, Cpf) LIKE @Termo
                 )";
@@ -132,7 +132,7 @@ namespace ApiCadastroClientes.Data.Repositories
             }
             else
             {
-                query = "SELECT Id, Nome, Email, Senha, Endereco, Cpf, Telefone, Role FROM Usuarios Where Record_status = 1";
+                query = "SELECT Id, Name, Email, Password, Endereco, Cpf, Telefone, Role FROM Usuarios Where Record_status = 1";
             }
 
             var command = new SqlCommand(query, connection);
@@ -149,9 +149,9 @@ namespace ApiCadastroClientes.Data.Repositories
                 usuarios.Add(new UsuarioModel
                 {
                     Id = reader.GetGuid(0),
-                    Nome = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
+                    Name = reader.IsDBNull(1) ? string.Empty : reader.GetString(1),
                     Email = reader.IsDBNull(2) ? string.Empty : reader.GetString(2),
-                    Senha = reader.IsDBNull(3) ? null : reader.GetString(3),
+                    Password = reader.IsDBNull(3) ? null : reader.GetString(3),
                     Endereco = reader.IsDBNull(4) ? null : reader.GetString(4),
                     Cpf = reader.IsDBNull(5) ? null : reader.GetString(5),
                     Telefone = reader.IsDBNull(6) ? null : reader.GetString(6),
@@ -179,7 +179,7 @@ namespace ApiCadastroClientes.Data.Repositories
                 lista.Add(new UsuarioModel
                 {
                     Id = reader.GetGuid(0),
-                    Nome = reader.GetString(1),
+                    Name = reader.GetString(1),
                     Email = reader.GetString(2),
                     Telefone = reader.IsDBNull(4) ? null : reader.GetString(4),
                     Cpf = reader.IsDBNull(5) ? null : reader.GetString(5),
@@ -207,12 +207,12 @@ namespace ApiCadastroClientes.Data.Repositories
             await conn.OpenAsync();
 
             var cmd = new SqlCommand(@"UPDATE Usuarios 
-                                       SET Nome = @nome, Email = @email, Senha = @senha, Endereco = @endereco, Cpf = @cpf, Telefone = @telefone 
+                                       SET Name = @name, Email = @email, Password = @password, Endereco = @endereco, Cpf = @cpf, Telefone = @telefone 
                                        WHERE Id = @id, Record_status = 1", conn);
             cmd.Parameters.AddWithValue("@id", id);
-            cmd.Parameters.AddWithValue("@nome", (object)usuario.Nome ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@name", (object)usuario.Name ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@email", (object)usuario.Email ?? DBNull.Value);
-            cmd.Parameters.AddWithValue("@senha", (object)usuario.Senha ?? DBNull.Value);
+            cmd.Parameters.AddWithValue("@password", (object)usuario.Password ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@endereco", (object)usuario.Endereco ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@cpf", (object)usuario.Cpf ?? DBNull.Value);
             cmd.Parameters.AddWithValue("@telefone", (object)usuario.Telefone ?? DBNull.Value);

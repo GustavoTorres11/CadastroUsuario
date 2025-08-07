@@ -16,11 +16,11 @@ namespace ApiNotasSimples.Services
             return Regex.IsMatch(telefone, pattern);
         }
 
-        public bool ValidarSenha(string senha)
+        public bool ValidarSenha(string password)
         {
             // Mínimo 6 caracteres e pelo menos 1 letra maiúscula
             var pattern = @"^(?=.*[A-Z]).{6,}$";
-            return Regex.IsMatch(senha, pattern);
+            return Regex.IsMatch(password, pattern);
         }
     }
 }

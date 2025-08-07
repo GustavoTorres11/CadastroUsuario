@@ -30,9 +30,9 @@ namespace ApiCadastroClientes.Services
 
             var usuario = new UsuarioModel()
             {
-                Nome = dto.Nome,
+                Name = dto.Name,
                 Email = dto.Email,
-                Senha = _cryptoService.HashPassword(dto.Senha), 
+                Password = _cryptoService.HashPassword(dto.Password), 
                 Endereco = dto.Endereco,
                 Cpf = dto.Cpf,
                 Telefone = dto.Telefone
@@ -48,15 +48,16 @@ namespace ApiCadastroClientes.Services
         // LOGAR
         public async Task<UsuarioModel?> Logar(LoginDTO login)
         {
+  
             if (login == null)
                 throw new ArgumentNullException(nameof(login), "Dados de login não podem ser nulos.");
 
             var usuario = await _repo.BuscarPorEmail(login.Email);
             if (usuario != null)
             {
-                _logger.LogDebug("Usuário encontrado: {Email}, Senha: {Senha}", usuario.Email, usuario.Senha ?? "null");
+                _logger.LogDebug("Usuário encontrado: {Email}, Senha: {Password}", usuario.Email, usuario.Password ?? "null");
 
-                if (!string.IsNullOrEmpty(usuario.Senha) && _cryptoService.VerifyPassword(login.Senha, usuario.Senha))
+                if (!string.IsNullOrEmpty(usuario.Password) && _cryptoService.VerifyPassword(login.Password, usuario.Password))
                 {
                     _logger.LogInformation("Login bem-sucedido para e-mail: {Email}", login.Email);
                     return usuario;

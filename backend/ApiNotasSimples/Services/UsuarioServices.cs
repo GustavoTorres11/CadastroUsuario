@@ -19,7 +19,7 @@ namespace ApiNotasSimples.Services
         {
             var cliente = new UsuarioModel
             {
-                Nome = dto.Nome,
+                Name = dto.Name,
                 Email = dto.Email,
                 Telefone = dto.Telefone,
                 Cpf = dto.Cpf,

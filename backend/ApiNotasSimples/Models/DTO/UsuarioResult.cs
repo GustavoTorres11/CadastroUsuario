@@ -3,7 +3,7 @@
     public class UsuarioResult
     {
         public Guid Id { get; set; }
-        public string Nome { get; set; }
+        public string Name { get; set; }
         public string Email { get; set; }
         public string Telefone { get; set; }
         public string Cpf { get; set; }
@@ -17,7 +17,7 @@
         public UsuarioResult(UsuarioModel usuario)
         {
             this.Id = usuario.Id;
-            this.Nome = usuario.Nome;
+            this.Name = usuario.Name;
             this.Email = usuario.Email;
             this.Telefone = usuario.Telefone;
             this.Cpf = usuario.Cpf;

@@ -5,6 +5,8 @@ using ApiNotasSimples.Models;
 using ApiNotasSimples.Models.DTO;
 using ApiNotasSimples.Services;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Routing;
+
 
 namespace ApiCadastroClientes.Controllers
 {
@@ -58,7 +60,7 @@ namespace ApiCadastroClientes.Controllers
             {
                 token,
                 usuario.Id,
-                usuario.Nome,
+                usuario.Name,
                 usuario.Email,
                 usuario.Role
             });
